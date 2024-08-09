@@ -1,26 +1,19 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pokedex.Models;
 
-    [Table("PokemonTipo")]
-    public class PokemonTipo
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+[Table("PokemonTipo")]
+public class PokemonTipo
+{
+    [Key, Column(Order = 1)]
+    public int PokemonNumero { get; set; }
+    [ForeignKey("PokemonNumero")]
+    public Pokemon Pokemon { get; set; }
 
-        public int Numero { get; set; }
+    [Key, Column(Order = 2)]
+    public int TipoId { get; set; }
+    [ForeignKey("TipoId")]
+    public Tipo Tipo { get; set; }
 
-        [Key, Column(Order = 1)]
-        public int RegiaoId { get; set; }
-        [ForeignKey("RegiaoId")]
-        public Regiao Regiao { get; set; }
-
-        [Required]
-        public int GenroId { get; set; }
-        [ForeignKey("GeneroId")]
-        public Genero Genero { get; set; }
-
-        
-    }
+}

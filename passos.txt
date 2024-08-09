@@ -1,3 +1,21 @@
+git config --global user.name GalloJunior
+git config --global user.email gallojunior
+
 dotnet new mvc -o Pokedex
 
-ctrl + shift + p = Abrir nuget gallery
+cd Pokedex
+
+dotnet watch run
+
+Abrir Nuget Gallery
+Ctrl + Shift + P - Pesquisar Nuget
+
+
+dotnet tool install --global dotnet-ef --version 8.0.7
+
+dotnet tool update --global dotnet-ef --version 8.0.7
+
+dotnet ef migrations add inicializando-banco
+
+dotnet ef database update
+
